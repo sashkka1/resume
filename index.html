@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Александр Дрозд — AI-first full-stack разработчик</title>
+<meta name="description" content="Резюме Александра Дрозда — AI-first full-stack разработчик, разработка в связке с Claude Code. Resume of Aliaksandr Drozd — AI-first full-stack developer.">
+<style>
+:root{--ink:#1d2126;--muted:#555;--accent:#2c5a85;--soft:#eef3f8;--bg:#f3f1ec;--card:#fff}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "Segoe UI",Inter,Arial,sans-serif}
+.page{max-width:900px;margin:28px auto;background:var(--card);padding:34px 40px 30px;border-radius:14px;box-shadow:0 6px 28px rgba(30,30,20,.08);position:relative}
+.lang{position:fixed;top:14px;right:16px;display:flex;background:#fff;border:1px solid #d6dde6;border-radius:999px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08);z-index:5}
+.lang button{border:0;background:none;padding:7px 14px;font:600 13px "Segoe UI",Arial,sans-serif;color:var(--accent);cursor:pointer}
+.lang button.on{background:var(--accent);color:#fff}
+h1{font-size:30px;margin:0;letter-spacing:.2px}
+.role{font-size:17px;color:var(--accent);font-weight:600;margin:3px 0 8px}
+.contacts{font-size:14px;color:#444;display:flex;flex-wrap:wrap;gap:4px 18px}
+.summary{margin:14px 0 4px;padding:10px 14px;background:var(--soft);border-left:3px solid var(--accent);border-radius:6px}
+h2{font-size:14px;text-transform:uppercase;letter-spacing:.9px;color:var(--accent);border-bottom:1.5px solid var(--accent);padding-bottom:3px;margin:20px 0 8px}
+.jh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.jt{font-weight:700;font-size:15.5px}
+.jd{color:var(--muted);font-size:14px;white-space:nowrap}
+.jsub{color:var(--muted);margin:10px 0 2px}
+.jsub b{color:var(--ink)}
+ul{margin:3px 0 0;padding-left:20px}li{margin:2px 0}
+.stack{font-size:13px;color:var(--accent);margin-top:3px}
+.skills{display:grid;grid-template-columns:170px 1fr;gap:5px 14px}
+.skills b{color:#333}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:4px 16px;font-size:14px}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid #c9d7e6}
+.foot{margin-top:18px;padding-top:6px;border-top:1.5px solid var(--accent);font-size:14px}
+.foot b{color:var(--accent)}
+html[lang=ru] [data-l=en],html[lang=en] [data-l=ru]{display:none!important}
+@media (max-width:700px){
+ .page{margin:0;border-radius:0;padding:56px 16px 24px;box-shadow:none}
+ h1{font-size:25px}.skills{grid-template-columns:1fr}.skills b{margin-top:6px}.three{grid-template-columns:1fr}
+}
+@media print{
+ @page{size:A4;margin:8mm 12mm 6mm}
+ body{background:#fff;font-size:9pt;line-height:1.22}
+ .page{margin:0;padding:0;box-shadow:none;max-width:none}
+ .lang{display:none}
+ h1{font-size:19pt}.role{font-size:12pt}.contacts{font-size:9.5pt}
+ h2{font-size:11pt;margin:7px 0 4px}.jt{font-size:10.5pt}.jd,.jsub{font-size:9.5pt}.jsub{margin:5px 0 2px}
+ .stack{font-size:9pt}.three{font-size:8.6pt;gap:1px 12px}.skills{grid-template-columns:150px 1fr;gap:3px 10px}
+ .summary{padding:5px 9px;margin:5px 0 2px}.foot{font-size:9pt;margin-top:6px}
+ a{border:0}
+}
+</style></head><body>
+
+<div class="lang" role="group" aria-label="Language">
+ <button type="button" data-set="ru">RU</button><button type="button" data-set="en">EN</button>
+</div>
+
+<main class="page">
+
+<h1><span data-l="ru">Александр Дрозд</span><span data-l="en">Aliaksandr Drozd</span></h1>
+<div class="role"><span data-l="ru">AI-first full-stack разработчик · разработка в связке с Claude Code</span><span data-l="en">AI-first full-stack developer · building with Claude Code</span></div>
+<div class="contacts">
+<span><span data-l="ru">Минск, Беларусь · удалённо или офис</span><span data-l="en">Minsk, Belarus · remote or on-site</span></span>
+<span>Telegram: <a href="https://t.me/alexander_drozd">@alexander_drozd</a></span>
+<span><a href="mailto:sashadrozdbkru@gmail.com">sashadrozdbkru@gmail.com</a></span>
+<span>GitHub: <a href="https://github.com/sashkka1">sashkka1</a></span>
+</div>
+
+<div class="summary">
+<span data-l="ru">Разрабатываю продукт целиком и довожу до запуска: веб-платформу, мобильное приложение для iOS и Android, сервер, оплату, интеграции с CRM и ИИ. За 5 месяцев 2026 года в одиночку запустил три коммерческих продукта: две веб-платформы с ролями, оплатой и мультиязычностью и приложение в App Store и Google Play с подпиской. Код пишу в связке с Claude Code: ставлю задачу и даю контекст, проверяю и тестирую результат, отвечаю за то, что уходит в прод. Технологии ниже — стек проектов, освоенный в этой работе.</span>
+<span data-l="en">I build complete products and ship them: web platforms, iOS and Android apps, backend, payments, CRM and AI integrations. In 5 months of 2026 I single-handedly launched three commercial products: two web platforms with roles, payments and multiple languages, and a subscription app in the App Store and Google Play. I write code together with Claude Code: I set the task and context, review and test the result, and own what goes to production. The technologies below are the project stacks I mastered through this work.</span>
+</div>
+
+<h2><span data-l="ru">Опыт работы</span><span data-l="en">Experience</span></h2>
+
+<div class="jh"><div class="jt"><span data-l="ru">Full-stack разработчик — коммерческие проекты (один разработчик на проекте)</span><span data-l="en">Full-stack developer — commercial projects (sole developer)</span></div><div class="jd"><span data-l="ru">май 2026 — сейчас</span><span data-l="en">May 2026 — present</span></div></div>
+
+<div class="jsub"><b>AIDA Case</b> — <span data-l="ru">платформа стоматологических кейсов · <a href="https://www.aidadoc.com">aidadoc.com</a> · май – сентябрь 2026</span><span data-l="en">dental case platform · <a href="https://www.aidadoc.com">aidadoc.com</a> · May – Sep 2026</span></div>
+<ul data-l="ru">
+<li>Спроектировал и запустил платформу с нуля: пациент загружает снимки и проходит анкету, система собирает кейс и PDF, клиники присылают планы лечения и платят за доступ к кейсу.</li>
+<li>Сделал 4 кабинета (пациент, врач, клиника, администратор), 8 языков интерфейса, вход через Google, карту клиник, запись на приём с уведомлениями, Telegram-уведомления сотрудникам.</li>
+<li>Встроил ИИ: ассистент в чате (OpenAI), модерация и перевод сообщений (Claude). Вёл 156 миграций базы с политиками доступа RLS; 245 коммитов за 4 месяца. Мобильную версию сделал на Expo.</li>
+</ul>
+<ul data-l="en">
+<li>Designed and launched the platform from scratch: patients upload scans and fill in a questionnaire, the system builds a case and a PDF, clinics send treatment plans and pay for access to the case.</li>
+<li>Built 4 dashboards (patient, doctor, clinic, admin), 8 interface languages, Google sign-in, a clinic map, appointment booking with notifications, Telegram alerts for staff.</li>
+<li>Integrated AI: chat assistant (OpenAI), message moderation and translation (Claude). Maintained 156 database migrations with RLS access policies; 245 commits in 4 months. Built the mobile version with Expo.</li>
+</ul>
+<div class="stack">Next.js 15 · React 19 · TypeScript · Supabase (Postgres, RLS, Storage) · OpenAI / Claude API · Google APIs · Railway · Expo</div>
+
+<div class="jsub"><b>DocToDoc</b> — <span data-l="ru">платные видеоконсультации «врач — врачу» · <a href="https://www.doc2doc.io">doc2doc.io</a> · май – июль 2026</span><span data-l="en">paid doctor-to-doctor video consultations · <a href="https://www.doc2doc.io">doc2doc.io</a> · May – Jul 2026</span></div>
+<ul data-l="ru">
+<li>Запустил платформу платных консультаций: каталог экспертов с модерацией, слоты и бронь с таймером, встречи в Google Meet, письма и напоминания по расписанию.</li>
+<li>Подключил оплату через Stripe Checkout и выплаты экспертам в разные страны через Stripe Connect. Развёл боевое и тестовое окружения, сделал 3 языка интерфейса и ИИ-генератор баннеров.</li>
+</ul>
+<ul data-l="en">
+<li>Launched a paid consultation platform: moderated expert catalog, time slots with timed reservations, Google Meet calls, scheduled emails and reminders.</li>
+<li>Integrated Stripe Checkout payments and cross-border payouts to experts via Stripe Connect. Set up production and staging environments, 3 interface languages and an AI banner generator.</li>
+</ul>
+<div class="stack">Next.js 16 · Tailwind 4 · Supabase · Stripe Checkout + Connect · Google Calendar / Meet · next-intl · Railway</div>
+
+<div class="jsub"><b>Amenova</b> — <span data-l="ru">мобильное приложение · App Store и Google Play · июнь 2026 — сейчас</span><span data-l="en">mobile app · App Store and Google Play · Jun 2026 — present</span></div>
+<ul data-l="ru">
+<li>Выпустил приложение на рынки Бразилии и англоязычных стран 30.06.2026, текущая версия — 6.0. Приложение блокирует отвлекающие приложения до молитвы: на iOS — расширения Screen Time на Swift, на Android — нативный модуль на Kotlin.</li>
+<li>Сделал подписку с пробным периодом (RevenueCat) и онбординг-воронку; настроил события Meta и TikTok для рекламы, серверное событие удержания на AWS Lambda и аналитику Firebase.</li>
+</ul>
+<ul data-l="en">
+<li>Released the app for Brazil and English-speaking markets on 30 June 2026; current version 6.0. The app blocks distracting apps until prayer: Screen Time extensions in Swift on iOS, a native Kotlin module on Android.</li>
+<li>Built a subscription with a free trial (RevenueCat) and an onboarding funnel; set up Meta and TikTok ad events, a server-side retention event on AWS Lambda and Firebase analytics.</li>
+</ul>
+<div class="stack">Expo SDK 54 · React Native 0.81 · TypeScript · Swift (Screen Time API) · Kotlin · RevenueCat · AWS Lambda · Firebase</div>
+
+<div class="jsub"><b><span data-l="ru">ИИ-автоматизация для бизнеса</span><span data-l="en">AI automation for business</span></b> — <span data-l="ru">MCP-коннекторы Claude · сентябрь – октябрь 2026</span><span data-l="en">Claude MCP connectors · Sep – Oct 2026</span></div>
+<ul data-l="ru">
+<li>Написал серверы, через которые сотрудники прямо из чата с Claude работают со своими системами (плюс настройка Битрикс24 и голосовых ИИ-агентов на Vapi и Retell AI):
+ <ul><li>реклама Meta — отчёты и создание кампаний с лид-формами (Python);</li><li>SendPulse — 60 инструментов из спецификации API, план рассылок в Google-таблице;</li><li>Битрикс24 — массовые правки контактов и сделок с учётом лимитов API.</li></ul></li>
+</ul>
+<ul data-l="en">
+<li>Built servers that let staff work with their business systems straight from a Claude chat (plus Bitrix24 setup and voice AI agents on Vapi and Retell AI):
+ <ul><li>Meta Ads — reports and lead-form campaign creation (Python);</li><li>SendPulse — 60 tools generated from the API spec, a mailing plan in Google Sheets;</li><li>Bitrix24 — bulk edits of contacts and deals within API rate limits.</li></ul></li>
+</ul>
+<div class="stack">MCP · Node.js · Python · Meta Marketing API · SendPulse API · Bitrix24 REST · Google Sheets · Telegram Bot API</div>
+
+<div class="jh" style="margin-top:12px"><div class="jt"><span data-l="ru">Преподаватель программирования</span><span data-l="en">Programming teacher</span></div><div class="jd"><span data-l="ru">2 года</span><span data-l="en">2 years</span></div></div>
+
+<h2><span data-l="ru">Как я работаю</span><span data-l="en">How I work</span></h2>
+<div class="skills">
+<b><span data-l="ru">Основной инструмент</span><span data-l="en">Main tool</span></b><span><span data-l="ru">Claude Code: инструкции проекта (CLAUDE.md), скиллы, хуки, MCP-серверы, сабагенты; Cursor</span><span data-l="en">Claude Code: project instructions (CLAUDE.md), skills, hooks, MCP servers, subagents; Cursor</span></span>
+<b><span data-l="ru">Что делаю сам</span><span data-l="en">What I do myself</span></b><span><span data-l="ru">продумываю продукт и устройство системы, ставлю задачи агенту, проверяю и тестирую результат, разбираю ошибки по логам, деплою, публикую в App Store и Google Play, настраиваю сервисы (Supabase, Stripe, Railway, Битрикс24, рекламные кабинеты)</span><span data-l="en">design the product and system architecture, task the agent, review and test the output, debug from logs, deploy, publish to the App Store and Google Play, configure services (Supabase, Stripe, Railway, Bitrix24, ad accounts)</span></span>
+<b><span data-l="ru">Знаю руками</span><span data-l="en">Hands-on</span></b><span><span data-l="ru">HTML, CSS, JavaScript, Git — база с frontend-времён (RS School, 2022–2025)</span><span data-l="en">HTML, CSS, JavaScript, Git — my frontend foundation (RS School, 2022–2025)</span></span>
+</div>
+
+<h2><span data-l="ru">Frontend до ИИ · 2024–2025 · написано руками, без ИИ-инструментов</span><span data-l="en">Frontend before AI · 2024–2025 · hand-written, no AI tools</span></h2>
+<ul data-l="ru">
+<li><b>Solitaire</b> — пасьянс «Косынка» как Telegram Mini App: вся игровая логика на чистом JavaScript (~120 КБ кода), 373 коммита, октябрь 2024 – март 2025 · <a href="https://sashkka1.github.io/Solitaire/">демо</a></li>
+<li><b>MathScore</b> — тренажёр устного счёта как Telegram Mini App, 127 коммитов, январь 2024 – май 2025 · <a href="https://sashkka1.github.io/MathScore/">демо</a></li>
+<li>Вёрстка лендингов (Waxom, Marvel, petFlypro, Museum) — <a href="https://sashkka1.github.io">sashkka1.github.io</a></li>
+</ul>
+<ul data-l="en">
+<li><b>Solitaire</b> — Klondike solitaire as a Telegram Mini App: all game logic in vanilla JavaScript (~120 KB of code), 373 commits, Oct 2024 – Mar 2025 · <a href="https://sashkka1.github.io/Solitaire/">demo</a></li>
+<li><b>MathScore</b> — mental math trainer as a Telegram Mini App, 127 commits, Jan 2024 – May 2025 · <a href="https://sashkka1.github.io/MathScore/">demo</a></li>
+<li>Landing page layouts (Waxom, Marvel, petFlypro, Museum) — <a href="https://sashkka1.github.io">sashkka1.github.io</a></li>
+</ul>
+
+<h2><span data-l="ru">Свои проекты</span><span data-l="en">Personal projects</span></h2>
+<div class="three" data-l="ru">
+<span><b>DrozdScript</b> — офлайн-распознавание речи, Windows и macOS (Rust)</span>
+<span><b>DrozdCode</b> — Claude Code как Windows-приложение</span>
+<span><b>DrozdLingo</b> — английский на локальных LLM</span>
+<span><b>Alarm</b> — Android-будильник с испытаниями и NFC</span>
+<span><b>DrozdRun</b> — метроном для бега (Android)</span>
+<span><b>DrozdTest</b> — клиент Expo-разработки для Android</span>
+<span><b>Amestat</b> — мониторинг креаторов TikTok и Instagram</span>
+<span><b>DrozdBread</b> — сайт рецептов хлеба</span>
+</div>
+<div class="three" data-l="en">
+<span><b>DrozdScript</b> — offline speech recognition, Windows and macOS (Rust)</span>
+<span><b>DrozdCode</b> — Claude Code as a Windows app</span>
+<span><b>DrozdLingo</b> — English practice with local LLMs</span>
+<span><b>Alarm</b> — Android alarm with challenges and NFC</span>
+<span><b>DrozdRun</b> — running metronome (Android)</span>
+<span><b>DrozdTest</b> — Expo development client for Android</span>
+<span><b>Amestat</b> — TikTok and Instagram creator monitoring</span>
+<span><b>DrozdBread</b> — bread recipe website</span>
+</div>
+
+<div class="foot"><b><span data-l="ru">Образование и языки:</span><span data-l="en">Education and languages:</span></b>
+<span data-l="ru">БГУИР; курсы RS School — JavaScript / Front-end · Русский — родной, английский — A2 (учу до B1)</span>
+<span data-l="en">Belarusian State University of Informatics and Radioelectronics (BSUIR); RS School — JavaScript / Front-end · Russian — native, English — A2 (learning towards B1)</span>
+</div>
+
+</main>
+<script>
+(function(){
+  var TITLE={ru:"Александр Дрозд — AI-first full-stack разработчик",en:"Aliaksandr Drozd — AI-first full-stack developer"};
+  function set(l){
+    document.documentElement.lang=l; document.title=TITLE[l];
+    document.querySelectorAll(".lang button").forEach(function(b){b.classList.toggle("on",b.dataset.set===l)});
+    try{history.replaceState(null,"",l==="en"?"?lang=en":location.pathname)}catch(e){}
+  }
+  var q=new URLSearchParams(location.search).get("lang");
+  set(q==="en"?"en":"ru");
+  document.querySelectorAll(".lang button").forEach(function(b){b.onclick=function(){set(b.dataset.set)}});
+})();
+</script>
+</body></html>
