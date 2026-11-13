@@ -31,15 +31,64 @@ a{color:var(--accent);text-decoration:none;border-bottom:1px solid #c9d7e6}
 .foot{margin-top:18px;padding-top:6px;border-top:1.5px solid var(--accent);font-size:14px}
 .foot b{color:var(--accent)}
 html[lang=ru] [data-l=en],html[lang=en] [data-l=ru]{display:none!important}
+.projects{max-width:1480px;width:calc(100% - 48px);margin:0 auto 40px;overflow:hidden;background:var(--card);padding:30px 40px 34px;border-radius:14px;box-shadow:0 6px 28px rgba(30,30,20,.08)}
+.projects>h2{margin-top:0}
+.proj{padding:6px 0 0}
+.proj+.proj,.pets{margin-top:44px}
+.proj h3,.pslide h3{margin:0;font-size:21px}
+.pmeta{color:var(--muted);font-size:13.5px;margin:2px 0 8px}
+.proj p,.pslide p{margin:0 0 14px}
+.cfw{position:relative;padding:0 58px}
+.cf{position:relative;height:clamp(320px,40vw,660px);overflow:visible;touch-action:pan-y;user-select:none;cursor:grab}
+.cf.drag{cursor:grabbing}
+.cf img{-webkit-user-drag:none;user-drag:none}
+.cf .it{position:absolute;left:50%;top:50%;width:60%;height:86%;display:flex;align-items:center;justify-content:center;transform:translate(-50%,-50%) scale(.3);opacity:0;z-index:0;pointer-events:none;transition:transform .75s cubic-bezier(.33,0,.18,1),opacity .45s ease,z-index 0s linear .3s}
+.cf .it img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;box-shadow:0 6px 18px rgba(20,30,45,.16);display:block;background:#fff}
+.cf .it.p0 img{box-shadow:0 12px 30px rgba(20,30,45,.2)}
+.cf .it.p0{transform:translate(-50%,-50%) scale(1);opacity:1;z-index:3;pointer-events:auto;cursor:zoom-in}
+.cf .it.pl{transform:translate(-103%,-50%) scale(.6);opacity:1;z-index:2;pointer-events:auto;cursor:pointer}
+.cf .it.hl{transform:translate(-150%,-50%) scale(.4);opacity:0;z-index:1}
+.cf .it.hr{transform:translate(50%,-50%) scale(.4);opacity:0;z-index:1}
+.cf .it.pr{transform:translate(3%,-50%) scale(.6);opacity:1;z-index:2;pointer-events:auto;cursor:pointer}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:0;background:#111418;color:#fff;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.25);z-index:5;padding:0;display:flex;align-items:center;justify-content:center}
+.nav svg{width:18px;height:18px;display:block}
+.nav:hover{background:#2a2f36}
+.nav.prev{left:0}.nav.next{right:0}
+.cf.still .it{transition:none}
+.cfw.single .nav{display:none}.cfw.single{padding:0}
+.dots{display:flex;gap:6px;justify-content:center;margin-top:10px}
+.dots button{width:8px;height:8px;border-radius:4px;border:0;padding:0;background:#c9d0d8;cursor:pointer;transition:width .25s}
+.dots button.on{background:var(--accent);width:20px}
+.cfw.single+.dots{display:none}
+.phead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.phead h3{font-size:14px;text-transform:uppercase;letter-spacing:.9px;color:var(--accent);margin:0}
+.ptabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.ptabs button{border:1px solid #d6dde6;background:#fff;border-radius:999px;padding:5px 12px;font:600 13px "Segoe UI",Arial,sans-serif;color:#445;cursor:pointer}
+.ptabs button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.pslide{display:none;animation:pfade .4s ease}
+.pslide.on{display:block}
+@keyframes pfade{from{transform:translateX(16px)}to{transform:none}}
+.lb{position:fixed;inset:0;background:rgba(8,9,12,.92);display:none;align-items:center;justify-content:center;z-index:20}
+.lb.on{display:flex}
+.lb img{max-width:78vw;max-height:84vh;border-radius:6px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.lb button{position:absolute;border:0;background:rgba(255,255,255,.14);color:#fff;cursor:pointer;border-radius:50%;padding:0;display:flex;align-items:center;justify-content:center}
+.lb button:hover{background:rgba(255,255,255,.24)}
+.lb button svg{display:block;width:24px;height:24px}
+.lb .lx svg{width:20px;height:20px}
+.lb .lp,.lb .ln{top:50%;transform:translateY(-50%);width:54px;height:54px}
+.lb .lp{left:3vw}.lb .ln{right:3vw}
+.lb .lx{top:18px;right:18px;width:44px;height:44px}
+.lb .lc{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:#cfd6df;font-size:14px}
 @media (max-width:700px){
  .page{margin:0;border-radius:0;padding:56px 16px 24px;box-shadow:none}
+ .projects{border-radius:0;padding:24px 16px;box-shadow:none;width:auto}.cfw{padding:0 40px}.cf{height:52vw;min-height:190px;overflow:hidden}.cf .it{width:66%}.nav{width:34px;height:34px}.lb img{max-width:92vw}.lb .lp{left:6px}.lb .ln{right:6px}
  h1{font-size:25px}.skills{grid-template-columns:1fr}.skills b{margin-top:6px}.three{grid-template-columns:1fr}
 }
 @media print{
  @page{size:A4;margin:8mm 12mm 6mm}
  body{background:#fff;font-size:9pt;line-height:1.22}
  .page{margin:0;padding:0;box-shadow:none;max-width:none}
- .lang{display:none}
+ .lang,.projects,.lb,.toproj{display:none!important}
  h1{font-size:19pt}.role{font-size:12pt}.contacts{font-size:9.5pt}
  h2{font-size:11pt;margin:7px 0 4px}.jt{font-size:10.5pt}.jd,.jsub{font-size:9.5pt}.jsub{margin:5px 0 2px}
  .stack{font-size:9pt}.three{font-size:8.6pt;gap:1px 12px}.skills{grid-template-columns:150px 1fr;gap:3px 10px}
@@ -61,6 +110,7 @@ html[lang=ru] [data-l=en],html[lang=en] [data-l=ru]{display:none!important}
 <span>Telegram: <a href="https://t.me/alexander_drozd">@alexander_drozd</a></span>
 <span><a href="mailto:sashadrozdbkru@gmail.com">sashadrozdbkru@gmail.com</a></span>
 <span>GitHub: <a href="https://github.com/sashkka1">sashkka1</a></span>
+<span class="toproj"><a href="#projects"><span data-l="ru">Проекты в скриншотах ↓</span><span data-l="en">Projects in screenshots ↓</span></a></span>
 </div>
 
 <div class="summary">
@@ -122,7 +172,7 @@ html[lang=ru] [data-l=en],html[lang=en] [data-l=ru]{display:none!important}
 
 <h2><span data-l="ru">Как я работаю</span><span data-l="en">How I work</span></h2>
 <div class="skills">
-<b><span data-l="ru">Основной инструмент</span><span data-l="en">Main tool</span></b><span><span data-l="ru">Claude Code: инструкции проекта (CLAUDE.md), скиллы, хуки, MCP-серверы, сабагенты; Cursor</span><span data-l="en">Claude Code: project instructions (CLAUDE.md), skills, hooks, MCP servers, subagents; Cursor</span></span>
+<b><span data-l="ru">Основной инструмент</span><span data-l="en">Main tool</span></b><span><span data-l="ru">Claude Code: инструкции проекта (CLAUDE.md), скиллы, хуки, MCP-серверы, сабагенты</span><span data-l="en">Claude Code: project instructions (CLAUDE.md), skills, hooks, MCP servers, subagents</span></span>
 <b><span data-l="ru">Что делаю сам</span><span data-l="en">What I do myself</span></b><span><span data-l="ru">продумываю продукт и устройство системы, ставлю задачи агенту, проверяю и тестирую результат, разбираю ошибки по логам, деплою, публикую в App Store и Google Play, настраиваю сервисы (Supabase, Stripe, Railway, Битрикс24, рекламные кабинеты)</span><span data-l="en">design the product and system architecture, task the agent, review and test the output, debug from logs, deploy, publish to the App Store and Google Play, configure services (Supabase, Stripe, Railway, Bitrix24, ad accounts)</span></span>
 <b><span data-l="ru">Знаю руками</span><span data-l="en">Hands-on</span></b><span><span data-l="ru">HTML, CSS, JavaScript, Git — база с frontend-времён (RS School, 2022–2025)</span><span data-l="en">HTML, CSS, JavaScript, Git — my frontend foundation (RS School, 2022–2025)</span></span>
 </div>
@@ -167,6 +217,80 @@ html[lang=ru] [data-l=en],html[lang=en] [data-l=ru]{display:none!important}
 </div>
 
 </main>
+<div class="projects" id="projects">
+<h2><span data-l="ru">Проекты</span><span data-l="en">Projects</span></h2>
+<section class="proj" id="p-aida">
+<h3>AIDA Case</h3>
+<div class="pmeta"><span data-l="ru">Веб-платформа · май – сентябрь 2026 · <a href="https://www.aidadoc.com">aidadoc.com</a></span><span data-l="en">Web platform · May – Sep 2026 · <a href="https://www.aidadoc.com">aidadoc.com</a></span></div>
+<p><span data-l="ru">Платформа стоматологических кейсов. Пациент загружает фото, снимки КТ или готовый план лечения, ИИ-агент собирает из этого кейс, проверенные клиники присылают свои планы. Четыре кабинета, 8 языков, CRM для клиник и чат с ИИ-ассистентом.</span><span data-l="en">A dental case platform. Patients upload photos, CBCT scans or an existing treatment plan, an AI agent turns them into a structured case, and verified clinics send their treatment plans. Four dashboards, 8 languages, a clinic CRM and an AI assistant chat.</span></p>
+<div class="cfw"><button class="nav prev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><div class="cf"><div class="it"><img loading="lazy" src="projects/aida-1.webp" alt=""></div><div class="it"><img loading="lazy" src="projects/aida-2.webp" alt=""></div><div class="it"><img loading="lazy" src="projects/aida-3.webp" alt=""></div><div class="it"><img loading="lazy" src="projects/aida-4.webp" alt=""></div><div class="it"><img loading="lazy" src="projects/aida-5.webp" alt=""></div><div class="it"><img loading="lazy" src="projects/aida-6.webp" alt=""></div></div><button class="nav next" type="button" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button></div><div class="dots"></div>
+</section>
+<section class="proj" id="p-d2d">
+<h3>DocToDoc</h3>
+<div class="pmeta"><span data-l="ru">Веб-платформа · май – июль 2026 · <a href="https://www.doc2doc.io">doc2doc.io</a></span><span data-l="en">Web platform · May – Jul 2026 · <a href="https://www.doc2doc.io">doc2doc.io</a></span></div>
+<p><span data-l="ru">Платные видеоконсультации «врач — врачу» для стоматологов: каталог экспертов, бронь слота с таймером, оплата через Stripe и выплаты экспертам в разные страны, встречи в Google Meet. Скриншоты сняты на демо-данных.</span><span data-l="en">Paid doctor-to-doctor video consultations for dentists: expert catalog, timed slot reservations, Stripe payments with cross-border payouts to experts, Google Meet calls. Screenshots use demo data.</span></p>
+<div class="cfw"><button class="nav prev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><div class="cf"><div class="it"><img loading="lazy" src="projects/d2d-1.webp" alt=""></div><div class="it"><img loading="lazy" src="projects/d2d-2.webp" alt=""></div><div class="it"><img loading="lazy" src="projects/d2d-3.webp" alt=""></div><div class="it"><img loading="lazy" src="projects/d2d-4.webp" alt=""></div></div><button class="nav next" type="button" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button></div><div class="dots"></div>
+</section>
+<section class="proj" id="p-amenova">
+<h3>Amenova</h3>
+<div class="pmeta"><span data-l="ru">Мобильное приложение iOS и Android · июнь 2026 — сейчас</span><span data-l="en">iOS and Android app · Jun 2026 — present</span></div>
+<p><span data-l="ru">Приложение блокирует отвлекающие приложения, пока пользователь не помолится. На iOS — расширения Screen Time на Swift, на Android — нативный модуль на Kotlin. Подписка с пробным периодом, онбординг-воронка, реклама и аналитика. Опубликовано в App Store и Google Play.</span><span data-l="en">The app blocks distracting apps until the user prays. Screen Time extensions in Swift on iOS, a native Kotlin module on Android. Subscription with a free trial, onboarding funnel, ads and analytics. Published in the App Store and Google Play.</span></p>
+<div class="cfw"><button class="nav prev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><div class="cf"><div class="it"><img loading="lazy" src="projects/amenova-1.webp" alt=""></div><div class="it"><img loading="lazy" src="projects/amenova-2.webp" alt=""></div><div class="it"><img loading="lazy" src="projects/amenova-3.webp" alt=""></div></div><button class="nav next" type="button" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button></div><div class="dots"></div>
+</section>
+<section class="pets" id="pets">
+<div class="phead"><h3><span data-l="ru">Свои проекты</span><span data-l="en">Personal projects</span></h3></div>
+<div class="ptabs"></div>
+<div class="pslide">
+<h3>DrozdScript</h3>
+<div class="pmeta"><span data-l="ru">Windows и macOS · Rust</span><span data-l="en">Windows and macOS · Rust</span></div>
+<p><span data-l="ru">Распознавание речи без интернета: запись по горячей клавише, текст вставляется туда, где стоит курсор. Модели работают локально, есть перевод на английский. Пользуюсь каждый день — так надиктовываю задачи для Claude.</span><span data-l="en">Offline speech recognition: record with a hotkey, and the text is typed where the cursor is. Models run locally, with English translation. I use it every day to dictate tasks to Claude.</span></p>
+<div class="cfw single"><button class="nav prev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><div class="cf"><div class="it"><img loading="lazy" src="projects/drozdscript-1.webp" alt=""></div></div><button class="nav next" type="button" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button></div><div class="dots"></div>
+</div>
+<div class="pslide">
+<h3>DrozdCode</h3>
+<div class="pmeta"><span data-l="ru">Windows</span><span data-l="en">Windows</span></div>
+<p><span data-l="ru">Claude Code как отдельное приложение: вкладки проектов и чатов, история, лимиты подписки на экране. Сделано под свою работу с несколькими проектами одновременно.</span><span data-l="en">Claude Code as a standalone app: project and chat tabs, history, subscription limits on screen. Built for my own work across several projects at once.</span></p>
+<div class="cfw single"><button class="nav prev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><div class="cf"><div class="it"><img loading="lazy" src="projects/drozdcode-1.webp" alt=""></div></div><button class="nav next" type="button" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button></div><div class="dots"></div>
+</div>
+<div class="pslide">
+<h3>DrozdLingo</h3>
+<div class="pmeta"><span data-l="ru">Windows · локальные LLM</span><span data-l="en">Windows · local LLMs</span></div>
+<p><span data-l="ru">Английский на локальных моделях: модель составляет предложения из моих слов в нужных временах, я перевожу, она проверяет. У каждого слова свой рейтинг от 0 до 10.</span><span data-l="en">English practice with local models: the model builds sentences from my own words in the chosen tenses, I translate, and it checks me. Every word has its own 0–10 score.</span></p>
+<div class="cfw"><button class="nav prev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><div class="cf"><div class="it"><img loading="lazy" src="projects/drozdlingo-1.webp" alt=""></div><div class="it"><img loading="lazy" src="projects/drozdlingo-2.webp" alt=""></div><div class="it"><img loading="lazy" src="projects/drozdlingo-3.webp" alt=""></div><div class="it"><img loading="lazy" src="projects/drozdlingo-4.webp" alt=""></div></div><button class="nav next" type="button" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button></div><div class="dots"></div>
+</div>
+<div class="pslide">
+<h3>Alarm</h3>
+<div class="pmeta"><span data-l="ru">Android · Kotlin, Jetpack Compose, MediaPipe</span><span data-l="en">Android · Kotlin, Jetpack Compose, MediaPipe</span></div>
+<p><span data-l="ru">Будильник с испытаниями: чтобы выключить сигнал, нужно решить примеры, пройти тест на реакцию, приложить телефон к NFC-метке или сделать отжимания перед камерой — их считает модель, которая следит за позой.</span><span data-l="en">An alarm clock with challenges: to stop it you solve math problems, pass a reaction test, tap an NFC tag or do push-ups in front of the camera, counted by a pose-tracking model.</span></p>
+<div class="cfw"><button class="nav prev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><div class="cf"><div class="it"><img loading="lazy" src="projects/alarm-1.webp" alt=""></div><div class="it"><img loading="lazy" src="projects/alarm-2.webp" alt=""></div><div class="it"><img loading="lazy" src="projects/alarm-3.webp" alt=""></div><div class="it"><img loading="lazy" src="projects/alarm-4.webp" alt=""></div><div class="it"><img loading="lazy" src="projects/alarm-5.webp" alt=""></div></div><button class="nav next" type="button" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button></div><div class="dots"></div>
+</div>
+<div class="pslide">
+<h3>DrozdRun</h3>
+<div class="pmeta"><span data-l="ru">Android</span><span data-l="en">Android</span></div>
+<p><span data-l="ru">Метроном для бега: держит заданный темп шагов.</span><span data-l="en">A running metronome that keeps a set step cadence.</span></p>
+<div class="cfw single"><button class="nav prev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><div class="cf"><div class="it"><img loading="lazy" src="projects/drozdrun-1.webp" alt=""></div></div><button class="nav next" type="button" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button></div><div class="dots"></div>
+</div>
+<div class="pslide">
+<h3>DrozdTest</h3>
+<div class="pmeta"><span data-l="ru">Android</span><span data-l="en">Android</span></div>
+<p><span data-l="ru">Клиент разработчика для Expo-проектов: запускает и проверяет сборки прямо на телефоне.</span><span data-l="en">A development client for Expo projects: runs and checks builds right on the phone.</span></p>
+<div class="cfw single"><button class="nav prev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><div class="cf"><div class="it"><img loading="lazy" src="projects/drozdtest-1.webp" alt=""></div></div><button class="nav next" type="button" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button></div><div class="dots"></div>
+</div>
+<div class="pslide">
+<h3>Amestat</h3>
+<div class="pmeta"><span data-l="ru">Веб</span><span data-l="en">Web</span></div>
+<p><span data-l="ru">Мониторинг креаторов TikTok и Instagram: сборщик статистики и сайт для администратора и менеджеров — просмотры, вовлечённость, новые видео, комментарии. Ники и лица креаторов на скриншотах скрыты.</span><span data-l="en">TikTok and Instagram creator monitoring: a stats collector and a site for the admin and managers — views, engagement, new videos, comments. Creator names and faces are hidden in the screenshots.</span></p>
+<div class="cfw"><button class="nav prev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><div class="cf"><div class="it"><img loading="lazy" src="projects/amestat-1.webp" alt=""></div><div class="it"><img loading="lazy" src="projects/amestat-2.webp" alt=""></div><div class="it"><img loading="lazy" src="projects/amestat-3.webp" alt=""></div><div class="it"><img loading="lazy" src="projects/amestat-4.webp" alt=""></div></div><button class="nav next" type="button" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button></div><div class="dots"></div>
+</div>
+<div class="pslide">
+<h3>DrozdBread</h3>
+<div class="pmeta"><span data-l="ru">Веб · <a href="https://sashadrozd12.github.io/drozd-bread/">сайт</a></span><span data-l="en">Web · <a href="https://sashadrozd12.github.io/drozd-bread/">site</a></span></div>
+<p><span data-l="ru">Сайт рецептов хлеба: пересчёт в граммы и ложки, плотность теста, доля ржаной муки, режимы аэрогриля.</span><span data-l="en">A bread recipe site: grams or spoons, dough density, rye share, air-fryer settings.</span></p>
+<div class="cfw"><button class="nav prev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><div class="cf"><div class="it"><img loading="lazy" src="projects/drozdbread-1.webp" alt=""></div><div class="it"><img loading="lazy" src="projects/drozdbread-2.webp" alt=""></div></div><button class="nav next" type="button" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button></div><div class="dots"></div>
+</div>
+</section>
+</div>
+<div class="lb" id="lb"><img alt=""><button class="lp" type="button" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><button class="ln" type="button" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button><button class="lx" type="button" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button><div class="lc"></div></div>
 <script>
 (function(){
   var TITLE={ru:"Александр Дрозд — AI-first full-stack разработчик",en:"Aliaksandr Drozd — AI-first full-stack developer"};
@@ -178,6 +302,77 @@ html[lang=ru] [data-l=en],html[lang=en] [data-l=ru]{display:none!important}
   var q=new URLSearchParams(location.search).get("lang");
   set(q==="en"?"en":"ru");
   document.querySelectorAll(".lang button").forEach(function(b){b.onclick=function(){set(b.dataset.set)}});
+})();
+
+
+(function(){
+  var AUTO=6000,PAUSE=7000,lastScroll=0;
+  addEventListener("scroll",function(){lastScroll=Date.now()},{passive:true});
+  var lb=document.getElementById("lb"),lbi=lb.querySelector("img"),lbc=lb.querySelector(".lc"),lbCar=null;
+  function lbShow(){var c=lbCar;lbi.src=c.imgs[c.i].src;lbc.textContent=(c.i+1)+" / "+c.n}
+  function lbClose(){lb.classList.remove("on");if(lbCar)lbCar.pause();lbCar=null}
+  lb.onclick=function(e){if(e.target===lb)lbClose()};
+  lb.querySelector(".lx").onclick=lbClose;
+  lb.querySelector(".lp").onclick=function(){lbCar.step(-1,1);lbShow()};
+  lb.querySelector(".ln").onclick=function(){lbCar.step(1,1);lbShow()};
+  document.addEventListener("keydown",function(e){
+    if(!lbCar&&(e.key==="ArrowLeft"||e.key==="ArrowRight")&&!/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)){
+      var best=null,bd=1e9;cars.forEach(function(c){if(!c.vis||!c.active()||c.n<2)return;var r=c.el.getBoundingClientRect(),d=Math.abs(r.top+r.height/2-innerHeight/2);if(d<bd){bd=d;best=c}});
+      if(best){e.preventDefault();best.step(e.key==="ArrowRight"?1:-1,1)}return}
+    if(!lbCar)return;
+    if(e.key==="Escape")lbClose();else if(e.key==="ArrowLeft"){lbCar.step(-1,1);lbShow()}else if(e.key==="ArrowRight"){lbCar.step(1,1);lbShow()}});
+
+  function Car(el){
+    var c=this,orig=[].slice.call(el.querySelectorAll(".it")),w=el.parentNode,dots=w.nextElementSibling,j=0;
+    c.n=orig.length;c.i=0;c.until=0;c.vis=false;c.active=function(){return true};
+    c.imgs=orig.map(function(x){return x.querySelector("img")});
+    var all=orig.slice();
+    if(c.n>1){for(var r=1;r<Math.ceil(6/c.n);r++)orig.forEach(function(it){var cl=it.cloneNode(true);el.appendChild(cl);all.push(cl)})}
+    var m=all.length;
+    orig.forEach(function(_,k){var b=document.createElement("button");b.type="button";b.setAttribute("aria-label",String(k+1));b.onclick=function(){c.go(k,1)};dots.appendChild(b)});
+    c.pause=function(){c.until=Date.now()+PAUSE};
+    c.step=function(s,user){j=((j+s)%m+m)%m;c.i=j%c.n;if(user)c.pause();draw()};
+    c.go=function(k,user){var d=((k-j%c.n)%c.n+c.n)%c.n;if(d>c.n/2)d-=c.n;c.step(d,user)};
+    function draw(){all.forEach(function(it,k){var d=((k-j)%m+m)%m;
+        it.className="it"+(d===0?" p0":m<2?"":d===1?" pr":d===m-1?" pl":d===2?" hr":d===m-2?" hl":"")});
+      [].forEach.call(dots.children,function(b,k){b.classList.toggle("on",k===c.i)})}
+    function reset(){el.classList.add("still");j=0;c.i=0;draw();void el.offsetWidth;el.classList.remove("still")}
+    w.querySelector(".prev").onclick=function(){c.step(-1,1)};
+    w.querySelector(".next").onclick=function(){c.step(1,1)};
+    all.forEach(function(it){it.onclick=function(){
+      if(it.classList.contains("p0")){lbCar=c;c.pause();lbShow();lb.classList.add("on")}
+      else if(it.classList.contains("pl"))c.step(-1,1);else if(it.classList.contains("pr"))c.step(1,1)}});
+    var x0=null,moved=false,wl=0;
+    el.addEventListener("pointerdown",function(e){if(e.button!==0)return;x0=e.clientX;moved=false;el.classList.add("drag")});
+    addEventListener("pointermove",function(e){if(x0!==null&&Math.abs(e.clientX-x0)>8)moved=true});
+    addEventListener("pointerup",function(e){if(x0===null)return;var dx=e.clientX-x0;x0=null;el.classList.remove("drag");
+      if(Math.abs(dx)>40)c.step(dx<0?1:-1,1)});
+    el.addEventListener("click",function(e){if(moved){e.stopPropagation();e.preventDefault();moved=false}},true);
+    el.addEventListener("dragstart",function(e){e.preventDefault()});
+    el.addEventListener("wheel",function(e){if(Math.abs(e.deltaX)<=Math.abs(e.deltaY)||Math.abs(e.deltaX)<20)return;e.preventDefault();
+      if(Date.now()-wl<650)return;wl=Date.now();c.step(e.deltaX>0?1:-1,1)},{passive:false});
+    new IntersectionObserver(function(es){es.forEach(function(e){
+      c.vis=e.intersectionRatio>=0.6;
+      if(e.intersectionRatio===0&&j!==0)reset()})},{threshold:[0,0.6]}).observe(el);
+    function fit(){var W=el.clientWidth;if(!W)return;var r=0;c.imgs.forEach(function(im){if(im.naturalWidth)r=Math.max(r,im.naturalHeight/im.naturalWidth)});
+      if(!r)return;var cw=W*(innerWidth<=700?.66:.6),h=cw*r/.86;el.style.height=Math.round(Math.max(innerWidth<=700?180:280,Math.min(h,innerHeight*.78)))+"px"}
+    c.imgs.forEach(function(im){if(im.complete)fit();else im.addEventListener("load",fit)});
+    addEventListener("resize",fit);c.fit=fit;
+    c.reset=reset;c.el=el;
+    c.tick=function(){if(c.n>1&&c.vis&&c.active()&&!lbCar&&Date.now()>c.until&&Date.now()-lastScroll>900)c.step(1)};
+    draw();
+  }
+  var cars=[].map.call(document.querySelectorAll(".cf"),function(el){return new Car(el)});
+  setInterval(function(){cars.forEach(function(c){if(lbCar===c)return;c.tick()})},AUTO);
+
+  var pets=document.getElementById("pets"),slides=[].slice.call(pets.querySelectorAll(".pslide")),tabs=pets.querySelector(".ptabs"),pi=0;
+  slides.forEach(function(s,k){var b=document.createElement("button");b.type="button";b.textContent=s.querySelector("h3").textContent;b.onclick=function(){pgo(k)};tabs.appendChild(b);
+    var car=cars.filter(function(c){return s.contains(c.imgs[0])})[0];if(car)car.active=function(){return k===pi};s._car=car});
+  function pgo(k){pi=((k%slides.length)+slides.length)%slides.length;
+    slides.forEach(function(s,j){s.classList.toggle("on",j===pi)});
+    [].forEach.call(tabs.children,function(b,j){b.classList.toggle("on",j===pi)});
+    var c=slides[pi]._car;if(c){c.fit();c.reset();c.until=Date.now()+1500}}
+  pgo(0);
 })();
 </script>
 </body></html>
