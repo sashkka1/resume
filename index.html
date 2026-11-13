@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="ru"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<script id="early-lang">(function(){try{var q=new URLSearchParams(location.search).get("lang"),n=((navigator.languages&&navigator.languages[0])||navigator.language||"").toLowerCase().slice(0,2);document.documentElement.lang=(q==="en"||q==="ru")?q:(["ru","be","uk"].indexOf(n)>=0?"ru":"en")}catch(e){}})()</script>
 <title>Александр Дрозд — AI-first full-stack разработчик</title>
 <meta name="description" content="Резюме Александра Дрозда — AI-first full-stack разработчик, разработка в связке с Claude Code. Resume of Aliaksandr Drozd — AI-first full-stack developer.">
 <style>
@@ -297,11 +298,15 @@ html[lang=ru] [data-l=en],html[lang=en] [data-l=ru]{display:none!important}
   function set(l){
     document.documentElement.lang=l; document.title=TITLE[l];
     document.querySelectorAll(".lang button").forEach(function(b){b.classList.toggle("on",b.dataset.set===l)});
-    try{history.replaceState(null,"",l==="en"?"?lang=en":location.pathname)}catch(e){}
   }
+  function pick(l){set(l);
+    try{history.replaceState(null,"","?lang="+l)}catch(e){}
+  }
+  // ?lang= из ссылки главнее; иначе по языку браузера: русский, белорусский, украинский → RU, любой другой → EN
   var q=new URLSearchParams(location.search).get("lang");
-  set(q==="en"?"en":"ru");
-  document.querySelectorAll(".lang button").forEach(function(b){b.onclick=function(){set(b.dataset.set)}});
+  var nav=((navigator.languages&&navigator.languages[0])||navigator.language||"").toLowerCase().slice(0,2);
+  set(q==="en"||q==="ru"?q:(["ru","be","uk"].indexOf(nav)>=0?"ru":"en"));
+  document.querySelectorAll(".lang button").forEach(function(b){b.onclick=function(){pick(b.dataset.set)}});
 })();
 
 
